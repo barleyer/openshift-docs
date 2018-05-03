@@ -1,0 +1,34 @@
+////
+sssd for ldap failover and extended attributes overview
+
+Module included in the following assemblies:
+
+* install_config/sssd_for_ldap_failover.adoc
+////
+
+[id='sssd-for-ldap-overview-{context}']
+
+{product-title} provides an
+xref:../configuring_authentication.adoc#LDAPPasswordIdentityProvider[authentication
+provider] for use with Lightweight Directory Access Protocol (LDAP) setups, but
+it can connect to only a single LDAP server. You can configure the System Security
+Services Daemon (SSSD) for LDAP failover to ensure access to your cluster if one 
+LDAP server fails.
+
+Originally designed to manage local and remote authentication to the host
+operating system, SSSD can now be configured to provide identity,
+authentication, and authorization services to web services like {product-title}.
+SSSD provides advantages over the built-in LDAP provider, including the ability
+to connect to any number of failover LDAP servers, as well as the ability to
+cache authentication attempts in case it can no longer reach any of those
+servers.
+
+The setup for this configuration is advanced and requires a separate
+authentication server, also called an *remote basic authentication server*, for
+{product-title} to communicate with. You configure this server
+to pass extra attributes, such as email addresses, to {product-title} so it can
+display them in the web console.
+
+This topic describes how to complete this
+set up on a dedicated physical or virtual machine (VM), but the concepts are also
+applicable to a setup in a container.

@@ -173,7 +173,7 @@ can be assigned cluster-wide:
 
 [[cluster-variables-table]]
 .General Cluster Variables
-[options="header"]
+[cols="5,5a", options="header"]
 |===
 
 |Variable |Purpose
